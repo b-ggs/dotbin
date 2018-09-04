@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+remote_port=$1
+local_port=$2
+username=$3
+host=$4
+
+ssh -L $remote_port:localhost:$local_port -N -T $username@$host
