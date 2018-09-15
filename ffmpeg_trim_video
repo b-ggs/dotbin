@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+input=$1
+start_time=$2
+end_time=$3
+output=${4:-"out.mp4"}
+
+ffmpeg -y -i "$input" -ss "$start_time" -to "$end_time" "$output"
