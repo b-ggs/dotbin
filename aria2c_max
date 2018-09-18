@@ -4,7 +4,7 @@ url=$1
 cookies=$2
 
 if [ -n "$cookies" ]; then
-  cookies="--load-cookies \"$cookies\""
+  cookies="--load-cookies $cookies"
 fi
 
 aria2c -x 16 -s 16 $cookies "$url"
