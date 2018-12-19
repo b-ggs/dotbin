@@ -2,5 +2,6 @@
 
 remote_host=$1
 remote_path=$2
+local_path=${3:-"."}
 
-rsync --partial --inplace --progress --recursive --append -e ssh "$remote_host":"$remote_path" .
+rsync --partial --inplace --progress --recursive --append -e ssh "$remote_host":"$remote_path" "$local_path"
