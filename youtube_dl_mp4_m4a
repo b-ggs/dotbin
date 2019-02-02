@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-url=$1
-
-youtube-dl "$url" --format "bestvideo[ext=mp4]+bestaudio[ext=m4a]" --merge-output-format mp4
