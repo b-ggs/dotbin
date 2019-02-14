@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+origins=$(find . -type f)
+
+for origin in $origins; do
+  basename=$(basename "$origin")
+  target="$PWD/$basename"
+
+  if [[ $1 == "mv" ]]; then
+    mv -f "$origin" "$target"
+  elif [[ $1 == "cp" ]]; then
+    cp -f "$origin" "$target"
+  else
+    echo "'$origin' -> '$target'"
+  fi
+done
