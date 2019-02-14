@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-local_port=$1
-username=$2
-host=$3
-
-ssh -D $local_port -N -C $username@$host
