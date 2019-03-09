@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
-origins=$(find . -type f)
-
-for origin in $origins; do
-  basename=$(basename "$origin")
+find . -type f | while read line; do
+  basename=$(basename "$line")
   target="$PWD/$basename"
 
   if [[ $1 == "mv" ]]; then
-    mv -f "$origin" "$target"
+    mv -f "$line" "$target"
   elif [[ $1 == "cp" ]]; then
-    cp -f "$origin" "$target"
+    cp -f "$line" "$target"
   else
-    echo "'$origin' -> '$target'"
+    echo "'$line' -> '$target'"
   fi
 done
